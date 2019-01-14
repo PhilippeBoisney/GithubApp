@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "io.github.philippeboisney.githubapp"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "io.github.philippeboisney.githubapp.TIRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        debug {
+            buildConfigField 'String', "GithubClientId", GithubClientId
+            buildConfigField 'String', "GithubClientSecret", GithubClientSecret
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', "GithubClientId", GithubClientId
+            buildConfigField 'String', "GithubClientSecret", GithubClientSecret
+        }
+    }
+    sourceSets {
+        androidTest.java.srcDirs += "src/test-common/java"
+        test.java.srcDirs += "src/test-common/java"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // KOTLIN
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+    // ANDROID
+    implementation "androidx.appcompat:appcompat:$app_compat_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+    implementation "com.google.android.material:material:$android_material_version"
+    implementation "androidx.emoji:emoji:$emoji_version"
+    implementation "androidx.emoji:emoji-bundled:$emoji_version"
+    // NETWORK
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofit_coroutines_adapter_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_gson_adapter_version"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    implementation "com.google.code.gson:gson:$gson_version"
+    implementation "androidx.paging:paging-runtime:$pagination_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+    // KOIN
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-android-viewmodel:$koin_version"
+    // MATERIAL DIALOG
+    implementation "com.afollestad.material-dialogs:core:$material_dialog_version"
+    // UNIT TESTING
+    testImplementation 'junit:junit:4.12'
+    testImplementation "org.koin:koin-test:$koin_version"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
+    testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+    // INSTRUMENTATION TESTING
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.1.1'
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
+    androidTestImplementation "org.koin:koin-test:$koin_version"
+    androidTestImplementation "android.arch.core:core-testing:1.1.1"
+}

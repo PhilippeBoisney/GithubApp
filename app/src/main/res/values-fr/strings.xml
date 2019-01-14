@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search">Rechercher...</string>
+    <string name="retry">Réessayer</string>
+    <string name="oops_an_error_happened">Aïe, une erreur s\'est produite...🤔</string>
+    <string name="technical_error">Aïe, il semblerait qu’il y ait une erreur technique</string>
+    <string name="no_result_found">Aucun résultat ne correspond à votre recherche</string>
+    <string name="refresh">Rafraichir</string>
+    <string name="followed_by">Suivi par:</string>
+    <string name="filter_popup_title">Filtrer les résultats par: </string>
+    <string name="repositories">dépôts</string>
+    <string-array name="filters">
+        <item>Nombre de dépôts</item>
+        <item>Nombre d\'abonnés</item>
+        <item>Score</item>
+    </string-array>
+</resources>

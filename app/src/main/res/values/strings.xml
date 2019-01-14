@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name" translatable="false">GithubApp</string>
+    <string name="search">Search...</string>
+    <string name="retry">Retry</string>
+    <string name="oops_an_error_happened">Oops ! An error happened... 🤔</string>
+    <string name="technical_error">Oops, a technical error happened</string>
+    <string name="no_result_found">No result found for your search</string>
+    <string name="refresh">Refresh</string>
+    <string name="followed_by">Followed by:</string>
+    <string name="filter_popup_title">Filter results by: </string>
+    <string name="repositories">repositories</string>
+    <string-array name="filters">
+        <item>Repositories</item>
+        <item>Followers</item>
+        <item>Score</item>
+    </string-array>
+</resources>
