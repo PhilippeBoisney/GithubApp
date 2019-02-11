@@ -1,6 +1,5 @@
 package io.github.philippeboisney.githubapp.repository
 
-import io.github.philippeboisney.githubapp.base.BaseTest
 import io.github.philippeboisney.githubapp.base.BaseUT
 import io.github.philippeboisney.githubapp.di.configureAppComponent
 import junit.framework.Assert.assertEquals
