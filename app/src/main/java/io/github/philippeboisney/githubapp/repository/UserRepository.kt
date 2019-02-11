@@ -1,12 +1,7 @@
 package io.github.philippeboisney.githubapp.repository
 
-import android.util.Log
 import io.github.philippeboisney.githubapp.api.UserService
 import io.github.philippeboisney.githubapp.model.User
-import io.github.philippeboisney.githubapp.storage.SharedPrefsManager
-import kotlinx.coroutines.*
-import java.lang.Exception
-import kotlin.coroutines.CoroutineContext
 
 class UserRepository(private val service: UserService) {
 

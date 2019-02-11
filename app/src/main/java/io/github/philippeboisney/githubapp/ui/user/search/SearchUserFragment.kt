@@ -106,14 +106,14 @@ class SearchUserFragment : BaseFragment(), SearchUserAdapter.OnClickListener {
         if (size == 0) {
             when (networkState) {
                 NetworkState.SUCCESS -> {
-                    Glide.with(this).load(R.drawable.ic_noun_telescope).into(emptyListImage)
+                    Glide.with(this).load(R.drawable.ic_directions_run_black_24dp).into(emptyListImage)
                     emptyListTitle.text = getString(R.string.no_result_found)
                     emptyListImage.visibility = View.VISIBLE
                     emptyListTitle.visibility = View.VISIBLE
                     emptyListButton.visibility = View.GONE
                 }
                 NetworkState.FAILED -> {
-                    Glide.with(this).load(R.drawable.ic_noun_lifebuoy).into(emptyListImage)
+                    Glide.with(this).load(R.drawable.ic_healing_black_24dp).into(emptyListImage)
                     emptyListTitle.text = getString(R.string.technical_error)
                     emptyListImage.visibility = View.VISIBLE
                     emptyListTitle.visibility = View.VISIBLE

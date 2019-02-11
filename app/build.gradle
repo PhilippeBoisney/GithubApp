@@ -20,8 +20,9 @@ android {
             buildConfigField 'String', "GithubClientSecret", GithubClientSecret
         }
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField 'String', "GithubClientId", GithubClientId
             buildConfigField 'String', "GithubClientSecret", GithubClientSecret
         }
@@ -42,8 +43,6 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$app_compat_version"
     implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
     implementation "com.google.android.material:material:$android_material_version"
-    implementation "androidx.emoji:emoji:$emoji_version"
-    implementation "androidx.emoji:emoji-bundled:$emoji_version"
     // NETWORK
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofit_coroutines_adapter_version"
@@ -58,6 +57,9 @@ dependencies {
     implementation "org.koin:koin-android-viewmodel:$koin_version"
     // MATERIAL DIALOG
     implementation "com.afollestad.material-dialogs:core:$material_dialog_version"
+    // TOOLS
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leak_canary_version"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leak_canary_version"
     // UNIT TESTING
     testImplementation 'junit:junit:4.12'
     testImplementation "org.koin:koin-test:$koin_version"

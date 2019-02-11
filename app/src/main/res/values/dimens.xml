@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="info_image">60dp</dimen>
-    <dimen name="avatar">70dp</dimen>
-    <dimen name="avatar_small">17dp</dimen>
+    <dimen name="avatar">40dp</dimen>
+    <dimen name="avatar_small">20dp</dimen>
 </resources>

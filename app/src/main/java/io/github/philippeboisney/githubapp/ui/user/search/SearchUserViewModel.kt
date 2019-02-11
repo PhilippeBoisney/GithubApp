@@ -24,7 +24,7 @@ class SearchUserViewModel(private val repository: UserRepository,
     private val paginationData = map(query) { createOrUpdatePagedList(it) }
 
     // OBSERVABLES ---
-    val users: LiveData<PagedList<User>> = switchMap(paginationData) {it.pagedList}
+    val users: LiveData<PagedList<User>> = switchMap(paginationData) { it.pagedList }
     val networkState: LiveData<NetworkState> = switchMap(paginationData) { it.networkState }
 
     init { query.value = "" }
@@ -39,7 +39,7 @@ class SearchUserViewModel(private val repository: UserRepository,
         val search = query.trim()
         if (this.query.value == search) return
         this.query.value = search
-        this.cancelPossibleRuuningRequest()
+        this.cancelPossibleRuningRequest()
     }
 
     /**
@@ -80,7 +80,7 @@ class SearchUserViewModel(private val repository: UserRepository,
      * Cancel possible running job
      * to only keep last result searched by user
      */
-    private fun cancelPossibleRuuningRequest() {
+    private fun cancelPossibleRuningRequest() {
         paginationData.value?.cancelRunningJob?.invoke()
     }
 

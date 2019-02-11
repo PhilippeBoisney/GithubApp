@@ -36,7 +36,7 @@
                 android:layout_marginBottom="8dp"
                 android:visibility="visible"/>
 
-        <androidx.emoji.widget.EmojiTextView
+        <TextView
                 android:id="@+id/item_search_user_network_state_title"
                 android:text="@string/oops_an_error_happened"
                 android:layout_width="wrap_content"
