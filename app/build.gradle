@@ -57,9 +57,6 @@ dependencies {
     implementation "org.koin:koin-android-viewmodel:$koin_version"
     // MATERIAL DIALOG
     implementation "com.afollestad.material-dialogs:core:$material_dialog_version"
-    // TOOLS
-    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leak_canary_version"
-    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leak_canary_version"
     // UNIT TESTING
     testImplementation 'junit:junit:4.12'
     testImplementation "org.koin:koin-test:$koin_version"

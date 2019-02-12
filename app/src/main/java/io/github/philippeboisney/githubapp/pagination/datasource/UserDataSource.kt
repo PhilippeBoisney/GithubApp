@@ -54,14 +54,22 @@ class UserDataSource(private val repository: UserRepository,
         networkState.postValue(NetworkState.FAILED)
     }
 
+    override fun invalidate() {
+        super.invalidate()
+        supervisorJob.cancelChildren()   // Cancel possible running job to only keep last result searched by user
+    }
+
     // PUBLIC API ---
-    fun cancelRunningJob() = supervisorJob.cancelChildren()
+
+    fun getNetworkState(): LiveData<NetworkState> =
+        networkState
+
+    fun refresh() =
+        this.invalidate()
 
     fun retryFailedQuery() {
         val prevQuery = retryQuery
         retryQuery = null
         prevQuery?.invoke()
     }
-
-    fun getNetworkState(): LiveData<NetworkState> = networkState
 }

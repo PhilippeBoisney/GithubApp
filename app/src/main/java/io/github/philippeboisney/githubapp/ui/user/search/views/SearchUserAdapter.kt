@@ -30,7 +30,7 @@ class SearchUserAdapter(private val callback: OnClickListener): PagedListAdapter
             R.layout.item_search_user_network_state -> SearchUserNetworkStateViewHolder(
                 view
             )
-            else -> throw IllegalArgumentException("unknown view type $viewType")
+            else -> throw IllegalArgumentException("Unknown view type $viewType")
         }
     }
 

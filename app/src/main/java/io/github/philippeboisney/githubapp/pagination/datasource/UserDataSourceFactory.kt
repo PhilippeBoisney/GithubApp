@@ -19,10 +19,15 @@ class UserDataSourceFactory(private val repository: UserRepository,
         return source
     }
 
+    // --- PUBLIC API
+
+    fun getQuery() = query
+
+    fun getSource() = source.value
+
     fun updateQuery(query: String, sort: String){
         this.query = query
         this.sort = sort
+        getSource()?.refresh()
     }
-
-    fun getQuery() = query
 }

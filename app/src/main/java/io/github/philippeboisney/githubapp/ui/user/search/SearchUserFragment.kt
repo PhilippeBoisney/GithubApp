@@ -94,7 +94,7 @@ class SearchUserFragment : BaseFragment(), SearchUserAdapter.OnClickListener {
     }
 
     private fun configureObservables() {
-        viewModel.networkState.observe(this, Observer { adapter.updateNetworkState(it) })
+        viewModel.networkState?.observe(this, Observer { adapter.updateNetworkState(it) })
         viewModel.users.observe(this, Observer { adapter.submitList(it) })
     }
 
