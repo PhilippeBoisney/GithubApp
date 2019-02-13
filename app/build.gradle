@@ -3,6 +3,10 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+def keysPropertiesFile = rootProject.file("keys.properties")
+def keysProperties = new Properties()
+keysProperties.load(new FileInputStream(keysPropertiesFile))
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -16,15 +20,15 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField 'String', "GithubClientId", GithubClientId
-            buildConfigField 'String', "GithubClientSecret", GithubClientSecret
+            buildConfigField 'String', "GithubClientId", keysProperties['GithubClientId']
+            buildConfigField 'String', "GithubClientSecret", keysProperties['GithubClientSecret']
         }
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField 'String', "GithubClientId", GithubClientId
-            buildConfigField 'String', "GithubClientSecret", GithubClientSecret
+            buildConfigField 'String', "GithubClientId", keysProperties['GithubClientId']
+            buildConfigField 'String', "GithubClientSecret", keysProperties['GithubClientSecret']
         }
     }
     sourceSets {

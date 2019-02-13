@@ -71,4 +71,4 @@ fastlane/readme.md
 .idea/modules.xml
 .idea/runConfigurations.xml
 .idea/vcs.xml
-gradle.properties
+keys.properties
